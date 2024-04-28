@@ -1,0 +1,35 @@
+<%- include("_header") -%>
+
+<h1>List of products (<%= model.length %>)</h1>
+
+<div class="table-responsive-sm">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Libelle</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th class="d-print-none">
+          <a class="btn btn-sm btn-success" href="/create">Add</a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (const product of model) { %>
+        <tr>
+          <td><%= product.Libelle %></td>
+          <td><%= product.Description %></td>
+          <td><%= product.Category %></td>
+          <td><%= product.Price %></td>
+          <td class="d-print-none">
+            <a class="btn btn-sm btn-warning" href="http://127.0.0.1:3000/edit/<%= product.Product_ID %>">Edit</a>
+            <a class="btn btn-sm btn-danger" href="http://127.0.0.1:3000/delete/<%= product.Product_ID %>">Delete</a>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include("_footer") -%>

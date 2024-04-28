@@ -1,0 +1,18 @@
+<%- include("_header") -%>
+
+<h1>Connexion</h1>
+<form action="http://127.0.0.1:5000/login" method="post">
+  <div class="form-horizontal">
+    <%- include("_input", { label: 'Nom d\'utilisateur', type: 'text', name: 'username', autofocus: true }) -%>
+    <%- include("_input", { label: 'Mot de passe', type: 'password', name: 'password' }) -%>
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2"></label>
+      <div class="col-sm-10">
+        <input type="submit" value="Se connecter" class="btn btn-default btn-primary" />
+        <a href="/register" class="btn btn-default btn-secondary">S'inscrire</a>
+      </div>
+    </div>
+  </div>
+</form>
+
+<%- include("_footer") -%>
